@@ -82,15 +82,14 @@ namespace CardGame
             }
             int firstPlayerResult = playerOne.Hand.Max(c => c.GetCardPower());
             int seconPlayerResult = playerTwo.Hand.Max(c => c.GetCardPower());
-            Card maxCardFirst = playerOne.Hand.Max();
-            Card maxCardSecond = playerTwo.Hand.Max();
+           
             if (firstPlayerResult > seconPlayerResult)
             {
-                Console.WriteLine($"{playerOne.Name} wins with {maxCardFirst.Rank} of {maxCardFirst.Suit}.");
+                Console.WriteLine($"{playerOne.Name} wins with {playerOne.Hand.Max().Rank} of {playerOne.Hand.Max().Suit}.");
             }
             else
             {
-                Console.WriteLine($"{playerTwo.Name} wins with {maxCardSecond.Rank} of {maxCardSecond.Suit}.");
+                Console.WriteLine($"{playerTwo.Name} wins with {playerTwo.Hand.Max().Rank} of {playerTwo.Hand.Max().Suit}.");
             }
         }
     }
